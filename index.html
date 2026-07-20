@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع تعلّم البرمجة</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="topbar">
+            <div class="logo">تعلم بناء صفحة ويب باستخدام الذكاء الاصطناعي</div>
+            <nav class="main-nav">
+                <a href="#home">الرئيسية</a>
+                <a href="#services">الخدمات</a>
+                <a href="#courses">الدورات</a>
+                <a href="#articles">المقالات</a>
+                <a href="#about">عنّا</a>
+                <a href="#contact">تواصل</a>
+            </nav>
+        </div>
+        <div class="hero" id="home">
+            <div class="hero-text">
+                <p class="eyebrow">ابدأ رحلة التعلم</p>
+                <h1>تعلّم البرمجة واصنع موقعك بنفسك</h1>
+                <p>دورات ومقالات بالعربي للمبتدئين، تصميم واجهات، جافاسكربت، وأساسيات تطوير الويب.</p>
+                <div class="hero-actions">
+                    <a href="#courses" class="btn btn-primary">اطّلع على الدورات</a>
+                    <a href="#contact" class="btn btn-secondary">تواصل معنا</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="card-highlight">
+                    <h3>صمم موقعك الآن</h3>
+                    <p>واجهة حديثة وسهلة في التعلّم.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="features" id="services">
+        <article class="feature-card">
+            <h3>دروس فيديو</h3>
+            <p>تعلم خطوة بخطوة مع مقاطع فيديو واضحة ومبسطة.</p>
+        </article>
+        <article class="feature-card">
+            <h3>دورات تفاعلية</h3>
+            <p>تطوّر بسرعة من خلال تمارين ومشاريع عملية.</p>
+        </article>
+        <article class="feature-card">
+            <h3>شهادات مجانية</h3>
+            <p>احصل على شهادة عند إكمال الدورة لتدعيم مهاراتك.</p>
+        </article>
+    </section>
+
+    <section class="courses" id="courses">
+        <div class="section-header">
+            <span>دوراتنا</span>
+            <h2>اختر الطريق المناسب لك</h2>
+        </div>
+        <div class="course-grid">
+            <div class="course-card">
+                <h4>أساسيات HTML</h4>
+                <p>تعلم تركيب صفحات الويب وعناصر HTML الأساسية.</p>
+                <span class="course-badge">مبتدئ</span>
+                <button class="ai-btn" onclick="openAIDetails('html')">اشرحلي بالذكاء الاصطناعي ✨</button>
+                <button class="video-btn" onclick="openVideoOverlay('html')">شاهد الفيديو ✨</button>
+            </div>
+            <div class="course-card">
+                <h4>تصميم CSS</h4>
+                <p>أنماط، تخطيطات، وتصميم واجهات جذابة.</p>
+                <span class="course-badge">متوسط</span>
+                <button class="ai-btn" onclick="openAIDetails('css')">اشرحلي بالذكاء الاصطناعي ✨</button>
+                <button class="video-btn" onclick="openVideoOverlay('css')">شاهد الفيديو ✨</button>
+            </div>
+            <div class="course-card">
+                <h4>JavaScript للمبتدئين</h4>
+                <p>أضف تفاعلية وسلوكًا ديناميكيًا لموقعك.</p>
+                <span class="course-badge">متوسط</span>
+                <button class="ai-btn" onclick="openAIDetails('js')">اشرحلي بالذكاء الاصطناعي ✨</button>
+                <button class="video-btn" onclick="openVideoOverlay('js')">شاهد الفيديو ✨</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-overlay" id="aiModal">
+        <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <button class="modal-close" id="closeModal" aria-label="إغلاق النافذة">×</button>
+            <div class="modal-body" id="modalBody">
+                <h3 id="modalTitle"></h3>
+                <p>يتم إنشاء محتوى الشرح هنا عند الضغط على الزر.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-overlay" id="videoOverlay">
+        <div class="video-content" role="dialog" aria-modal="true" aria-labelledby="videoTitle">
+            <button class="modal-close" id="closeVideo" aria-label="إغلاق الفيديو">×</button>
+            <h3 id="videoTitle"></h3>
+            <video id="courseVideo" controls playsinline>
+                <source src="https://interactive-examples.mdn.mozilla.net/media/examples/flower.mp4" type="video/mp4">
+                المتصفح لا يدعم عرض الفيديو.
+            </video>
+            <p id="videoDescription"></p>
+        </div>
+    </div>
+
+    <section class="articles" id="articles">
+        <div class="section-header">
+            <span>مقالات تعليمية</span>
+            <h2>تعلم برمجة وإنشاء موقع ويب باستخدام الذكاء الاصطناعي</h2>
+        </div>
+        <div class="article-grid">
+            <article class="article-card">
+                <h4>كيف تبدأ تعلم البرمجة</h4>
+                <p>نشرح خطوات البداية الصحيحة في البرمجة مع تحديد الأدوات واللغات المناسبة لكل مبتدئ.</p>
+            </article>
+            <article class="article-card">
+                <h4>بناء موقع ويب باستخدام الذكاء الاصطناعي</h4>
+                <p>تعرف على طرق استخدام الذكاء الاصطناعي لتوليد تصميمات ومحتوى وتسريع تطوير المواقع.</p>
+            </article>
+            <article class="article-card">
+                <h4>أفضل ممارسات تعلم البرمجة</h4>
+                <p>نصائح عملية للحفاظ على انتظام التعلم وتحويل المعرفة إلى مشاريع واقعية.</p>
+            </article>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-content">
+            <div>
+                <span>عن الفريق</span>
+                <h2>نقدّم محتوى عربي عملي للمبرمجين الجدد</h2>
+                <p>نهدف إلى تبسيط تعلم تطوير الويب من خلال شروحات عربية واضحة، نماذج حقيقية، ودعم مباشر للطلاب.</p>
+            </div>
+            <div class="about-stats">
+                <div>
+                    <strong>120+</strong>
+                    <p>درسًا مجانيًا</p>
+                </div>
+                <div>
+                    <strong>50+</strong>
+                    <p>مشروعًا تفاعليًا</p>
+                </div>
+                <div>
+                    <strong>10K+</strong>
+                    <p>طالبًا سعيدًا</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="section-header">
+            <span>آراء المتعلمين</span>
+            <h2>تجارب ناجحة من طلابنا</h2>
+        </div>
+        <div class="testimonial-grid">
+            <article>
+                <p>تعلمت الكثير بسهولة، والدروس العربية جعلت الفكرة أوضح.</p>
+                <h4>سعاد</h4>
+            </article>
+            <article>
+                <p>الدورات متدرجة بشكل ممتاز، وأنصح أي مبتدئ يبدأ من هنا.</p>
+                <h4>أحمد</h4>
+            </article>
+            <article>
+                <p>صممت أول موقع شخصي بعد الدورات بوقت قصير جدًا.</p>
+                <h4>ليلى</h4>
+            </article>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="section-header">
+            <span>تواصل معنا</span>
+            <h2>هل لديك سؤال؟ ارسل لنا رسالة</h2>
+        </div>
+        <form class="contact-form">
+            <div class="input-row">
+                <label>
+                    الاسم
+                    <input type="text" placeholder="اكتب اسمك" required>
+                </label>
+                <label>
+                    البريد الإلكتروني
+                    <input type="email" placeholder="example@mail.com" required>
+                </label>
+            </div>
+            <label>
+                الرسالة
+                <textarea rows="5" placeholder="اكتب رسالتك هنا" required></textarea>
+            </label>
+            <button type="submit" class="btn btn-primary">إرسال</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© <span id="year"></span> جميع الحقوق محفوظة لـ husam ahmed</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        function openAIDetails(courseType) {
+            const modalBody = document.getElementById('modalBody');
+            let title = '';
+            let content = '';
+
+            if (courseType === 'html') {
+                title = 'شرح أساسيات HTML';
+                content = `
+                    <h4>كيف تبرمج هذا القسم؟</h4>
+                    <p>في هذا القسم نستخدم عناصر HTML الأساسية مثل <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, و <code>&lt;button&gt;</code>. هذا يسمح لك ببناء هيكل الصفحة بشكل واضح ومنظم.</p>
+                    <h4>كيف تصمم هذا القسم؟</h4>
+                    <p>تعتمد التصميمات على CSS لتحديد الألوان، الهوامش، والحواف. يمكنك استخدام <code>border-radius</code> لإضافة حواف دائرية و <code>box-shadow</code> لإعطاء تأثير بسيط واحترافي للكارت.</p>
+                    <h4>مثال كود بسيط وعملي</h4>
+                    <pre><code>&lt;div class="course-card"&gt;
+  &lt;h4&gt;أساسيات HTML&lt;/h4&gt;
+  &lt;p&gt;تعلم تركيب صفحات الويب.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                    <h4>نصيحة من الذكاء الاصطناعي للمبتدئين</h4>
+                    <p>ابدأ بتعلم بنية الصفحة أولًا ثم انتقل إلى التنسيق. التدرب على كتابة كود HTML يوميًا يبني الثقة بسرعة.</p>
+                `;
+            } else if (courseType === 'css') {
+                title = 'شرح تصميم CSS';
+                content = `
+                    <h4>كيف تبرمج هذا القسم؟</h4>
+                    <p>في CSS ننشئ قواعد تأثير لتنسيق الكروت، مثل <code>.course-card</code> و <code>.ai-btn</code>. نحدد الألوان والخطوط والمسافات لتكون الواجهة جميلة وسهلة القراءة.</p>
+                    <h4>كيف تصمم هذا القسم؟</h4>
+                    <p>استخدم <code>display: grid</code> لترتيب العناصر، و <code>border-radius</code> و <code>background</code> لجعل الكارت لطيفًا. اضف تباعدًا داخليًا <code>padding</code> وظلالًا خفيفة <code>box-shadow</code> لإبراز المعلومات.</p>
+                    <h4>مثال كود بسيط وعملي</h4>
+                    <pre><code>.course-card {
+  background: white;
+  padding: 30px;
+  border-radius: 22px;
+  box-shadow: 0 15px 40px rgba(15,23,42,0.08);
+}</code></pre>
+                    <h4>نصيحة من الذكاء الاصطناعي للمبتدئين</h4>
+                    <p>جرب تغيير الألوان والمسافات وراقب النتيجة. التصميم الجيد يبدأ من تنظيم المحتوى قبل اختيار الألوان.</p>
+                `;
+            } else if (courseType === 'js') {
+                title = 'شرح JavaScript للمبتدئين';
+                content = `
+                    <h4>كيف تبرمج هذا القسم؟</h4>
+                    <p>JavaScript يسمح لك بإضافة أحداث وتفاعل. في هذا القسم تكتب دوال تتعامل مع الأزرار، وتعرض نافذة منبثقة عند الضغط على الزر.</p>
+                    <h4>كيف تصمم هذا القسم؟</h4>
+                    <p>تأكد من أن الأزرار واضحة، والمسافات متناسقة. استخدم <code>cursor: pointer</code> و تأثيرات <code>:hover</code> لجعل التفاعل أفضل.</p>
+                    <h4>مثال كود بسيط وعملي</h4>
+                    <pre><code>button.addEventListener('click', function() {
+  openAIDetails('js');
+});</code></pre>
+                    <h4>نصيحة من الذكاء الاصطناعي للمبتدئين</h4>
+                    <p>ابدأ بفهم كيفية الربط بين HTML و CSS و JavaScript. اجعل كل جزء يقوم بوظيفته ولا تخلط بينهما في الكود.</p>
+                `;
+            }
+
+            modalBody.innerHTML = `<h3>${title}</h3>${content}`;
+            document.getElementById('aiModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('aiModal').classList.remove('active');
+        }
+
+        function openVideoOverlay(courseType) {
+            const videoOverlay = document.getElementById('videoOverlay');
+            const videoTitle = document.getElementById('videoTitle');
+            const videoDescription = document.getElementById('videoDescription');
+            const courseVideo = document.getElementById('courseVideo');
+
+            if (courseType === 'html') {
+                videoTitle.textContent = 'فيديو قصير عن أساسيات HTML';
+                videoDescription.textContent = 'شاهد تجربة سريعة لتعلم كيف تبدأ بكتابة صفحات HTML وتنظم المحتوى بشكل صحيح.';
+            } else if (courseType === 'css') {
+                videoTitle.textContent = 'فيديو قصير عن تصميم CSS';
+                videoDescription.textContent = 'تعرف على تجربة تصميم الكروت وتنسيق الألوان والمسافات باستخدام CSS.';
+            } else if (courseType === 'js') {
+                videoTitle.textContent = 'فيديو قصير عن JavaScript للمبتدئين';
+                videoDescription.textContent = 'استعرض تجربة إضافة تفاعل للموقع باستخدام كود JavaScript بسيط وواضح.';
+            }
+
+            courseVideo.currentTime = 0;
+            videoOverlay.classList.add('active');
+        }
+
+        function closeVideo() {
+            document.getElementById('videoOverlay').classList.remove('active');
+            document.getElementById('courseVideo').pause();
+        }
+
+        document.getElementById('closeModal').addEventListener('click', closeModal);
+        document.getElementById('aiModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeModal();
+            }
+        });
+
+        document.getElementById('closeVideo').addEventListener('click', closeVideo);
+        document.getElementById('videoOverlay').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeVideo();
+            }
+        });
+    </script>
+</body>
+</html>
